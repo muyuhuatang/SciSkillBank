@@ -1,0 +1,11 @@
+# Tested with Python 3.10.18 on macOS (x86_64).
+# Figure 2 (code/fig2_umap.py) needs only these two.
+numpy==2.2.6
+matplotlib==3.10.7
+# Recomputing the UMAP coordinates from the embeddings (code/umap_projection.py) also needs
+# these; exact equality with the released coordinates was checked with these versions.
+umap-learn==0.5.11
+pynndescent==0.5.13
+numba==0.61.2
+scikit-learn==1.7.2
+scipy==1.15.2

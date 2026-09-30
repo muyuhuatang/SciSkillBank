@@ -1,0 +1,21 @@
+SciSkillBank
+Copyright (c) 2026 The SciSkillBank authors
+
+Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary: https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including commercially,
+provided you give appropriate credit, provide a link to the license, and indicate if
+changes were made.
+
+Scope. The license covers the authors' contributions in this repository: the annotations,
+the model-generated summaries and rationales, the summary embeddings, the UMAP coordinates,
+the code, and the figures.
+
+Third-party content is not relicensed. Repository names, descriptions, topics and other
+GitHub metadata remain governed by their source repositories' own terms. 957 of the 2,200
+source repositories carry no license field and 107 carry NOASSERTION. Every record links to
+its source repository.
+
+The material is provided "as is", without warranties of any kind.
