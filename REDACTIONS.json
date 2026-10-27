@@ -1,0 +1,32 @@
+{
+  "policy": "Personal email addresses appearing in collected third-party public content were replaced with the literal string '[email redacted]' before release. Organizational contact addresses (for example published support addresses for public biological databases) and synthetic addresses used as documentation examples were retained, the latter because removing them would damage the evidence a rater is asked to judge.",
+  "replacement": "[email redacted]",
+  "distinct_addresses_redacted": 9,
+  "released_corpus": {
+    "file": "dataset/sciskillbank_repositories.csv",
+    "field": "description",
+    "repositories": [
+      "fleurytian/awesome-claude-skills"
+    ],
+    "occurrences": 1
+  },
+  "reviewer_evidence": {
+    "files": [
+      "blind-validation-instrument/SEND_TO_REVIEWER_A.zip",
+      "blind-validation-instrument/SEND_TO_REVIEWER_B.zip"
+    ],
+    "occurrences_per_archive": 11,
+    "affected_case_ids": {
+      "H018": 2,
+      "H035": 1,
+      "H055": 1,
+      "H079": 3,
+      "H090": 1
+    },
+    "note": "Both archives carry identical evidence, so each was redacted identically.",
+    "affected_case_ids_note": "Number of distinct addresses redacted per case; the addresses themselves are not listed."
+  },
+  "integrity_note": "coordinator_only/evidence_manifest.json records SHA-256 digests of the originally collected bytes, so the distributed evidence intentionally no longer matches them; likewise, the rater_packages zip_sha256 and html_sha256 values in coordinator_only/manifest.json describe the packages as built, before redaction. 03_check_package.py additionally reads source files by local_path from the original collection tree, which is not shipped here, so it documents the checks performed rather than running in this package.",
+  "verification": "After redaction, no listed address occurs anywhere in the package; both archives parse, retain 100 cases and the expected schema, carry identical payloads, and their application code and styles are byte-identical to the originals.",
+  "file_name_redaction": "One internal coding-sheet file name that carried an annotator's name is shown as coding_sheet_coderA-REDACTED.csv in the scripts and coordinator manifests."
+}
