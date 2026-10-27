@@ -61,7 +61,7 @@ the paper; the figure in the paper was rendered at a slightly shorter height.
 `fig4_measurement_instability.py`, `vizstyle.py`, `make_figs.sh` and `TEXT_FINDINGS.md` come
 from the paper's supplementary material, where the script was named
 `fig5_measurement_instability.py`; it was renamed to match the figure's number in the paper, and
-its docstring now points to the scripts in `code/instability/` that wrote its input tables.
+its docstring now names the runs that wrote its input tables rather than internal file paths.
 `fig2_umap.py` is rewritten from the version that produced the paper's figure: it reads the
 released CSV instead of internal working tables, writes into this folder, adds the PDF output and
 the printed counts, and changes nothing that affects the PNG output, which the pixel comparison

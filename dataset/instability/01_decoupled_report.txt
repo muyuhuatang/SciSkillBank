@@ -1,0 +1,81 @@
+ROBUSTNESS CHECK: methodology-encoding x autonomy under independent elicitation
+==============================================================================
+
+A complementary check on the released annotation, which stands as published.
+It re-elicits two labels with the two dimensions separated and asks whether the
+association reported in Section 5.3 moves.
+model gpt-4o-mini-2024-07-18, temperature 0, n requested = 2200
+
+  released   n=2200   chi2(3)=   1666.3   p < 0.001   Cramer's V = 0.870  [0.848, 0.892]
+  joint      n=2200   chi2(3)=   1638.1   p < 0.001   Cramer's V = 0.863  [0.840, 0.884]
+  decoupled  n=2200   chi2(3)=     59.8   p < 0.001   Cramer's V = 0.165  [0.127, 0.207]
+  decoupled_v2 n=2200   chi2(3)=     61.5   p < 0.001   Cramer's V = 0.167  [0.127, 0.213]
+
+  V(decoupled)    - V(joint) = -0.698   intervals DO NOT overlap
+  V(decoupled_v2) - V(joint) = -0.696   intervals DO NOT overlap
+
+  ATTRIBUTION: the association weakens even with workflow_stages retained, so breaking the co-elicitation is itself doing the work. Report V(joint) and V(decoupled_v2) side by side and let the annotator-consistency caveat cite the gap
+
+  Check the MARGINALS table regardless: if v2's marginals track joint's, the
+  released headline numbers are reproducible under decoupling even where the
+  crosstab is not.
+
+
+MARGINAL DISTRIBUTIONS (the paper's headline numbers)
+------------------------------------------------------------
+   condition        methodology   assistive  collaborative   delegated   autonomous  non-autonom.
+   released               69.2%       32.0%          22.3%       45.4%         0.4%         99.6%
+   joint                  68.7%       31.5%          20.1%       48.0%         0.4%         99.6%
+   decoupled              50.8%       21.5%           6.3%       68.6%         3.6%         96.4%
+   decoupled_v2           68.0%       18.0%          12.0%       67.8%         2.1%         97.9%
+   `joint` against `released` is the fidelity check: they should agree closely,
+   and a gap there means model drift rather than any effect under test.
+
+crosstab: released
+                                  assistive  collaborative      delegated     autonomous     row n
+  yes                           75 (4.9%)    488 (32.1%)    951 (62.5%)       8 (0.5%)      1522
+  no                          629 (92.8%)       2 (0.3%)      47 (6.9%)       0 (0.0%)       678
+  column n                            704            490            998              8      2200
+
+crosstab: joint
+                                  assistive  collaborative      delegated     autonomous     row n
+  yes                           67 (4.4%)    440 (29.1%)    996 (65.9%)       8 (0.5%)      1511
+  no                          625 (90.7%)       2 (0.3%)      61 (8.9%)       1 (0.1%)       689
+  column n                            692            442           1057              9      2200
+
+crosstab: decoupled
+                                  assistive  collaborative      delegated     autonomous     row n
+  yes                         173 (15.5%)      90 (8.1%)    803 (71.8%)      52 (4.7%)      1118
+  no                          300 (27.7%)      49 (4.5%)    706 (65.2%)      27 (2.5%)      1082
+  column n                            473            139           1509             79      2200
+
+crosstab: decoupled_v2
+                                  assistive  collaborative      delegated     autonomous     row n
+  yes                         205 (13.7%)    196 (13.1%)   1059 (70.8%)      36 (2.4%)      1496
+  no                          192 (27.3%)      69 (9.8%)    433 (61.5%)      10 (1.4%)       704
+  column n                            397            265           1492             46      2200
+
+AGREEMENT BETWEEN CONDITIONS (per repository)
+------------------------------------------------------------
+  released   vs joint       methodology_encoding   n=2200  agree 97.3%
+  released   vs joint       autonomy_level         n=2200  agree 93.1%
+  joint      vs decoupled   methodology_encoding   n=2200  agree 82.1%
+  joint      vs decoupled   autonomy_level         n=2200  agree 59.5%
+  joint      vs decoupled_v2  methodology_encoding   n=2200  agree 94.4%
+  joint      vs decoupled_v2  autonomy_level         n=2200  agree 65.7%
+  decoupled  vs decoupled_v2  methodology_encoding   n=2200  agree 82.6%
+  decoupled  vs decoupled_v2  autonomy_level         n=2200  agree 81.5%
+
+SCOPE
+------------------------------------------------------------
+  A supplementary robustness check, not a revalidation of the dataset. Both
+  conditions read the same README-derived summary, so this separates
+  joint-elicitation coupling from corpus structure and nothing more. It does not
+  test whether either label is CORRECT; the human pass in 5.human-anno does that,
+  and coder B's blind sheet (coding_sheet_coderB.csv) is still unfilled.
+  `gpt-4o-mini` is a rolling alias; the `released` row may have been produced by
+  an earlier snapshot, which is why `joint` is re-run here as the true control.
+
+MODEL RESOLUTION (reported by the API, not assumed)
+------------------------------------------------------------
+  requested gpt-4o-mini-2024-07-18     -> gpt-4o-mini-2024-07-18

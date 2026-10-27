@@ -1,0 +1,71 @@
+OPTION-ORDER SENSITIVITY: autonomy level
+==============================================================================
+
+model gpt-4o-mini-2024-07-18, temperature 0, 2200 repositories with all 4 orders answered
+
+orders tested:
+  forward    assistive, collaborative, delegated, autonomous
+  reverse    autonomous, delegated, collaborative, assistive
+  mid_collab collaborative, autonomous, assistive, delegated
+  mid_deleg  delegated, assistive, collaborative, autonomous
+
+1. STABILITY. The order-vs-order rows are the clean comparison: identical
+   prompt, only the option order differs. The `released vs forward` row is NOT a
+   drift control and must not be read as one -- the released labels come from the
+   three-dimension joint prompt while every condition here is a single-dimension
+   prompt, so that row confounds order with prompt structure.
+--------------------------------------------------------------------------
+   comparison                        n     agree     kappa   kappa_w
+   released vs forward            2200     56.3%     0.288     0.336
+   forward vs reverse             2200     83.9%     0.641     0.718
+   forward vs mid_collab          2200     77.7%     0.598     0.614
+   forward vs mid_deleg           2200     56.6%     0.357     0.397
+   reverse vs mid_collab          2200     79.0%     0.600     0.617
+   reverse vs mid_deleg           2200     58.9%     0.365     0.384
+   mid_collab vs mid_deleg        2200     72.0%     0.564     0.633
+
+2a. MARGINAL DISTRIBUTION UNDER EACH ORDER
+--------------------------------------------------------------------------
+   order        assistive  collaborative   delegated   autonomous
+   forward          13.7%          11.6%       69.8%         4.9%   (leads: assistive)
+   reverse          16.2%           3.3%       75.0%         5.5%   (leads: autonomous)
+   mid_collab       29.6%           7.8%       56.2%         6.4%   (leads: collaborative)
+   mid_deleg        51.0%           5.8%       35.1%         8.0%   (leads: delegated)
+   released         32.0%          22.3%       45.4%         0.4%   (released labels)
+
+2b. POSITION EFFECT (each level compared with itself, leading vs not).
+    This is the diagnostic. `lift` is the percentage-point CHANGE a level shows
+    when it leads, and its sign is not assumed: a negative lift means leading
+    suppresses the level, which is as real an order effect as primacy.
+    Prevalence cancels, because both numbers describe the same level.
+--------------------------------------------------------------------------
+   level           share leading share not leading       lift
+   assistive               13.7%            32.3%     -18.5
+   collaborative            7.8%             6.9%      +0.9
+   delegated               35.1%            67.0%     -31.9
+   autonomous               5.5%             6.4%      -0.9
+
+   mean absolute lift 13.0 points   (max -31.9 on delegated)
+   READING: the label moves with list position. Ship the counterbalanced consensus ALONGSIDE the released labels rather than in place of them, and state this lift in Limitations. This bears on the distribution across the four levels, not on the 99.6% non-autonomous headline
+
+3. COUNTERBALANCED LABEL SET
+--------------------------------------------------------------------------
+   all 4 orders agree : 1116 of 2200 (50.7%)   -> order_stable = True
+   consensus differs from the released label on 984 repositories
+   ties are broken toward the middle of the ordinal scale, never toward the
+   released label, so the consensus cannot inherit the bias under test.
+
+SCOPE
+--------------------------------------------------------------------------
+  A supplementary robustness check, not a revalidation of the dataset. It
+  measures whether the label is STABLE under presentation order, not whether it
+  is RIGHT. Four orders that agree can agree on a wrong label.
+  Only the human pass separates the two, and coder B's blind sheet
+  (5.human-anno/coding_sheet_coderB.csv) is still unfilled.
+  Methodology encoding is binary and is not tested here; a two-option list has
+  a position effect too, and 01_decoupled_annotation.py is the place it would
+  show up as a marginal shift.
+
+MODEL RESOLUTION (reported by the API, not assumed)
+------------------------------------------------------------
+  requested gpt-4o-mini-2024-07-18     -> gpt-4o-mini-2024-07-18

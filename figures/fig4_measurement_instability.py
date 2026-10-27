@@ -7,10 +7,9 @@ Three panels:
   (b) position effect: each level's share when it leads the list against when it does not
   (c) methodology x autonomy association under four elicitation structures
 
-Every number is recomputed from the per-repository label tables written by
-code/instability/02_option_order.py and code/instability/01_decoupled_annotation.py. Nothing is
-hardcoded. Point estimates are deterministic and must reproduce the archived reports
-exactly; bootstrap intervals are recomputed under the seed below and printed for audit.
+Every number is recomputed from the per-repository label tables of the option-order and
+decoupled-annotation runs (dataset/instability/). Nothing is hardcoded. Point estimates are
+deterministic and must reproduce the archived reports exactly; bootstrap intervals are recomputed under the seed below and printed for audit.
 
     python3 fig4_measurement_instability.py
 """

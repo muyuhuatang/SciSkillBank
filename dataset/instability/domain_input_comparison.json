@@ -1,0 +1,998 @@
+{
+  "generated_at": "2026-09-20T03:31:39.792763+00:00",
+  "models": [
+    {
+      "label": "GPT-4o-mini",
+      "directory": "domain_input_ablation_gpt4o_mini",
+      "model": "gpt-4o-mini-2024-07-18",
+      "config": {
+        "protocol_version": "2026-09-19-v4-mini-followup",
+        "run_id": "domain-input-20260919-v4-mini-followup",
+        "seed": 20260919,
+        "model": "gpt-4o-mini-2024-07-18",
+        "summary_temperature": 0.3,
+        "summary_max_tokens": 200,
+        "annotation_temperature": 0.0,
+        "annotation_max_tokens": 300,
+        "readme_max_characters": 3000,
+        "annotation_max_characters": 2000,
+        "practical_gap_margin_pp": {
+          "literature_review": 5.0,
+          "methodology_encoding": 5.0
+        },
+        "archived_cross_configuration_margin_pp": 5.0,
+        "alpha": 0.05,
+        "workers": 20,
+        "max_attempts": 3,
+        "model_scope": "GPT-4o-mini domain-input sensitivity follow-up on the same frozen sample and prompts after the completed GPT-4o experiment. This is a same-family reconstruction of the archived GPT-4o-mini pipeline, but original request payloads and resolved snapshot are unavailable. Archived-versus-fresh differences are a reconstruction diagnostic, not proof of exact historical reproduction.",
+        "sample_sizes": {
+          "research|1": 110,
+          "research|0": 190,
+          "data_science|1": 59,
+          "data_science|0": 241
+        },
+        "pilot_per_stratum": 10,
+        "additional_pilot_repetitions": 1,
+        "excluded_repository": "AppantasyArthurLai/taiwan-hungry-soul",
+        "followup_design_timing": "Selected after observing the completed GPT-4o experiment; retains the same600sample,40repeatIDs,paired inputs,prompt strings,sampling seed,estimands,strict parser,retries,and\u00b15pp primary margins. This is a disclosed follow-up, not a newly outcome-blind design."
+      },
+      "complete_primary_pairs": 564,
+      "complete_repeat_pairs": 39,
+      "primary_n": 600,
+      "raw_attempts": 2662,
+      "estimator_ranges": {
+        "literature_review": {
+          "archived": {
+            "research": [
+              0.33232628398791486,
+              0.33232628398791486
+            ],
+            "data_science": [
+              0.031584582441113514,
+              0.031584582441113514
+            ],
+            "gap": [
+              0.30074170154680135,
+              0.30074170154680135
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 0
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "with_domain": {
+            "research": [
+              0.3447129909365562,
+              0.35174113531563084
+            ],
+            "data_science": [
+              0.01472495935031587,
+              0.09214372662087844
+            ],
+            "gap": [
+              0.2525692643156778,
+              0.33701617596531497
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 21
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "without_domain": {
+            "research": [
+              0.359818731117825,
+              0.3668468754968996
+            ],
+            "data_science": [
+              0.024103263525460474,
+              0.08893173518618894
+            ],
+            "gap": [
+              0.270886995931636,
+              0.3427436119714391
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 17
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "domain_removal": {
+            "research": [
+              0.00807759580219431,
+              0.02213388456034346
+            ],
+            "data_science": [
+              -0.06804046309541795,
+              0.07420677583587305
+            ],
+            "gap": [
+              -0.06612918003367875,
+              0.0901743476557614
+            ],
+            "unknown_rows_by_domain": {
+              "research": 4,
+              "data_science": 32
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "archived_cross_configuration": {
+            "research": [
+              0.012386706948640485,
+              0.01941485132771506
+            ],
+            "data_science": [
+              -0.016859623090797634,
+              0.06055914417976492
+            ],
+            "gap": [
+              -0.04817243723112444,
+              0.0362744744185127
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 21
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          }
+        },
+        "methodology_encoding": {
+          "archived": {
+            "research": [
+              0.825091429480043,
+              0.825091429480043
+            ],
+            "data_science": [
+              0.6335331017263878,
+              0.6335331017263878
+            ],
+            "gap": [
+              0.19155832775365522,
+              0.19155832775365522
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 0
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "with_domain": {
+            "research": [
+              0.7995070758467151,
+              0.8065352202257896
+            ],
+            "data_science": [
+              0.4853972118315003,
+              0.5628159791020624
+            ],
+            "gap": [
+              0.23669109674465272,
+              0.3211380083942893
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 21
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "without_domain": {
+            "research": [
+              0.8009858483065657,
+              0.8080139926856402
+            ],
+            "data_science": [
+              0.4768252374563504,
+              0.5416537091170784
+            ],
+            "gap": [
+              0.2593321391894873,
+              0.3311887552292898
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 17
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "domain_removal": {
+            "research": [
+              -0.005549371919224043,
+              0.008506916838925106
+            ],
+            "data_science": [
+              -0.0859907416457125,
+              0.056256497285578494
+            ],
+            "gap": [
+              -0.061805869204802535,
+              0.09449765848463762
+            ],
+            "unknown_rows_by_domain": {
+              "research": 4,
+              "data_science": 32
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "archived_cross_configuration": {
+            "research": [
+              -0.025584353633328033,
+              -0.018556209254253456
+            ],
+            "data_science": [
+              -0.14813588989488846,
+              -0.07071712262432588
+            ],
+            "gap": [
+              0.04513276899099784,
+              0.12957968064063502
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 21
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          }
+        }
+      },
+      "bounds": {
+        "literature_review": {
+          "delta": [
+            -0.2028163957121693,
+            0.2223212379590754
+          ],
+          "gap_without_domain": [
+            0.2176908595716051,
+            0.3683520187349994
+          ],
+          "source": "summary.json / incomplete_pair_bounds (frozen bound_missing)",
+          "practical_margin_pp": 5.0,
+          "decision": "inconclusive_for_margin"
+        },
+        "methodology_encoding": {
+          "delta": [
+            -0.2391817670157915,
+            0.25038653874767913
+          ],
+          "gap_without_domain": [
+            0.17541096023341118,
+            0.4106173622207703
+          ],
+          "source": "summary.json / incomplete_pair_bounds (frozen bound_missing)",
+          "practical_margin_pp": 5.0,
+          "decision": "inconclusive_for_margin"
+        }
+      },
+      "pooled_methodology_estimator_ranges": {
+        "archived": [
+          0.662367029187261,
+          0.662367029187261
+        ],
+        "with_domain": [
+          0.5326779598938178,
+          0.5995013218996766
+        ],
+        "without_domain": [
+          0.5256188537325766,
+          0.5817470487538196
+        ]
+      },
+      "repeat_diagnostics": [
+        {
+          "condition": "with_domain",
+          "outcome": "literature_review",
+          "paired_repositories": "40",
+          "unchanged": "36",
+          "gain": "1",
+          "loss": "3"
+        },
+        {
+          "condition": "with_domain",
+          "outcome": "methodology_encoding",
+          "paired_repositories": "40",
+          "unchanged": "39",
+          "gain": "0",
+          "loss": "1"
+        },
+        {
+          "condition": "without_domain",
+          "outcome": "literature_review",
+          "paired_repositories": "39",
+          "unchanged": "35",
+          "gain": "2",
+          "loss": "2"
+        },
+        {
+          "condition": "without_domain",
+          "outcome": "methodology_encoding",
+          "paired_repositories": "39",
+          "unchanged": "34",
+          "gain": "3",
+          "loss": "2"
+        }
+      ],
+      "failed_attempt_reasons": {
+        "off_menu_workflow_stage": 145
+      },
+      "source_sha256": {
+        "config.json": "fd10067632a937f555bccb921bc0af95cb00eff6ae26cb1f59d5c61e3d8c5c03",
+        "data/manifest.json": "cd7cb7c6b53e5fcd2b2a9d25d1826e77132775b05d39e5fa85ac9aff5f084734",
+        "data/cost_ledger.json": "9bb59587383887a09ee985f34a07d1c13e8314afb9053814e6e291fedd65ed77",
+        "results/summary.json": "3e7cae5728dd0cd6d651fd5e91971822e88057cbe7afed494c15260b2c02c2e2",
+        "results/missingness_ranges.json": "5129bf669795bdeedae9edd86998e849e30abc265ac5e5d965cf844a24681efb"
+      },
+      "shared_input_sha256": {
+        "data/sample.csv": "908bf831564c752446cdbf31cfe464c641641c26f4c012c2443d548c56d276ec",
+        "data/frozen_inputs.jsonl": "2db2f1902dd2211320b111541dbe7b7754a13b08b60a7db6a967281b55f7ed33",
+        "prompts/annotation.txt": "ec002fa85c201ea5492a59be7eb647d1c277a2ee62f0b3558c9db1194393f047",
+        "prompts/summarization.txt": "7fa466c8837d34fbcb95e888d74f460caa9975d0a6ffd7d6cc65d173cd110767",
+        "prompts/workflow_stages.json": "f7f8244e27d1f53fb0480814e770de6e4db244bc3d53a39bfed884675d62181d"
+      }
+    },
+    {
+      "label": "GPT-4o",
+      "directory": "domain_input_ablation",
+      "model": "gpt-4o-2024-08-06",
+      "config": {
+        "protocol_version": "2026-09-19-v3-gpt4o",
+        "run_id": "domain-input-20260919-v3-gpt4o",
+        "seed": 20260919,
+        "model": "gpt-4o-2024-08-06",
+        "summary_temperature": 0.3,
+        "summary_max_tokens": 200,
+        "annotation_temperature": 0.0,
+        "annotation_max_tokens": 300,
+        "readme_max_characters": 3000,
+        "annotation_max_characters": 2000,
+        "practical_gap_margin_pp": {
+          "literature_review": 5.0,
+          "methodology_encoding": 5.0
+        },
+        "archived_cross_configuration_margin_pp": 5.0,
+        "alpha": 0.05,
+        "workers": 12,
+        "max_attempts": 3,
+        "model_scope": "GPT-4o domain-input sensitivity experiment; the archived release used GPT-4o-mini. Archived-versus-fresh differences therefore combine model change, generation variability, and incomplete historical request provenance and are not a direct reproduction test of the original model.",
+        "sample_sizes": {
+          "research|1": 110,
+          "research|0": 190,
+          "data_science|1": 59,
+          "data_science|0": 241
+        },
+        "pilot_per_stratum": 10,
+        "additional_pilot_repetitions": 1,
+        "excluded_repository": "AppantasyArthurLai/taiwan-hungry-soul"
+      },
+      "complete_primary_pairs": 580,
+      "complete_repeat_pairs": 39,
+      "primary_n": 600,
+      "raw_attempts": 2621,
+      "estimator_ranges": {
+        "literature_review": {
+          "archived": {
+            "research": [
+              0.33232628398791486,
+              0.33232628398791486
+            ],
+            "data_science": [
+              0.031584582441113514,
+              0.031584582441113514
+            ],
+            "gap": [
+              0.30074170154680135,
+              0.30074170154680135
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 0
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "with_domain": {
+            "research": [
+              0.3728891715694071,
+              0.3799173159484817
+            ],
+            "data_science": [
+              0.010442304104063192,
+              0.05169618026246814
+            ],
+            "gap": [
+              0.32119299130693896,
+              0.3694750118444185
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 12
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "without_domain": {
+            "research": [
+              0.3547622833518846,
+              0.3653044999204965
+            ],
+            "data_science": [
+              0.011512967915626358,
+              0.02463859543124206
+            ],
+            "gap": [
+              0.3301236879206425,
+              0.3537915320048702
+            ],
+            "unknown_rows_by_domain": {
+              "research": 3,
+              "data_science": 5
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "domain_removal": {
+            "research": [
+              -0.02515503259659723,
+              -0.007584671648910796
+            ],
+            "data_science": [
+              -0.04018321234684177,
+              0.014196291327178869
+            ],
+            "gap": [
+              -0.0393513239237761,
+              0.03259854069793098
+            ],
+            "unknown_rows_by_domain": {
+              "research": 4,
+              "data_science": 16
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "archived_cross_configuration": {
+            "research": [
+              0.040562887581491514,
+              0.04759103196056609
+            ],
+            "data_science": [
+              -0.021142278337050315,
+              0.02011159782135462
+            ],
+            "gap": [
+              0.020451289760136892,
+              0.06873331029761641
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 12
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          }
+        },
+        "methodology_encoding": {
+          "archived": {
+            "research": [
+              0.825091429480043,
+              0.825091429480043
+            ],
+            "data_science": [
+              0.6335331017263878,
+              0.6335331017263878
+            ],
+            "gap": [
+              0.19155832775365522,
+              0.19155832775365522
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 0
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "with_domain": {
+            "research": [
+              0.6818731117824772,
+              0.6889012561615517
+            ],
+            "data_science": [
+              0.3873515064817359,
+              0.4286053826401406
+            ],
+            "gap": [
+              0.25326772914233664,
+              0.30154974967981585
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 12
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "without_domain": {
+            "research": [
+              0.7014787724598502,
+              0.712020989028462
+            ],
+            "data_science": [
+              0.4328947017690378,
+              0.44602032928465346
+            ],
+            "gap": [
+              0.2554584431751968,
+              0.2791262872594242
+            ],
+            "unknown_rows_by_domain": {
+              "research": 3,
+              "data_science": 5
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "domain_removal": {
+            "research": [
+              0.012577516298298617,
+              0.030147877245985055
+            ],
+            "data_science": [
+              0.004289319128897261,
+              0.05866882280291791
+            ],
+            "gap": [
+              -0.04609130650461929,
+              0.025858558117087795
+            ],
+            "unknown_rows_by_domain": {
+              "research": 4,
+              "data_science": 16
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "archived_cross_configuration": {
+            "research": [
+              -0.14321831769756707,
+              -0.1361901733184925
+            ],
+            "data_science": [
+              -0.24618159524465352,
+              -0.20492771908624857
+            ],
+            "gap": [
+              0.0617094013886815,
+              0.10999142192616101
+            ],
+            "unknown_rows_by_domain": {
+              "research": 2,
+              "data_science": 12
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          }
+        }
+      },
+      "bounds": {
+        "literature_review": {
+          "delta": [
+            -0.14148612018605616,
+            0.10309101612788449
+          ],
+          "gap_without_domain": [
+            0.29355434508368,
+            0.37263467398125205
+          ],
+          "source": "summary.json / incomplete_pair_bounds (frozen bound_missing)",
+          "practical_margin_pp": 5.0,
+          "decision": "inconclusive_for_margin"
+        },
+        "methodology_encoding": {
+          "delta": [
+            -0.1766223306183973,
+            0.16125620241044916
+          ],
+          "gap_without_domain": [
+            0.16993149045459544,
+            0.35978832555942997
+          ],
+          "source": "summary.json / incomplete_pair_bounds (frozen bound_missing)",
+          "practical_margin_pp": 5.0,
+          "decision": "inconclusive_for_margin"
+        }
+      },
+      "pooled_methodology_estimator_ranges": {
+        "archived": [
+          0.662367029187261,
+          0.662367029187261
+        ],
+        "with_domain": [
+          0.43168377176347544,
+          0.46778588929570547
+        ],
+        "without_domain": [
+          0.4733227724369136,
+          0.48605953727701384
+        ]
+      },
+      "repeat_diagnostics": [
+        {
+          "condition": "with_domain",
+          "outcome": "literature_review",
+          "paired_repositories": "38",
+          "unchanged": "33",
+          "gain": "3",
+          "loss": "2"
+        },
+        {
+          "condition": "with_domain",
+          "outcome": "methodology_encoding",
+          "paired_repositories": "38",
+          "unchanged": "30",
+          "gain": "3",
+          "loss": "5"
+        },
+        {
+          "condition": "without_domain",
+          "outcome": "literature_review",
+          "paired_repositories": "40",
+          "unchanged": "37",
+          "gain": "1",
+          "loss": "2"
+        },
+        {
+          "condition": "without_domain",
+          "outcome": "methodology_encoding",
+          "paired_repositories": "40",
+          "unchanged": "29",
+          "gain": "7",
+          "loss": "4"
+        }
+      ],
+      "failed_attempt_reasons": {
+        "off_menu_workflow_stage": 84
+      },
+      "source_sha256": {
+        "config.json": "1bb647c4769c6b3aecdcdd26e6be7d7c31479fe5988d449b81c4f5f940038558",
+        "data/manifest.json": "df10550cd702b969d6ffc74b2614a5a5d452a20615a16e29ee8f814d9e9a0ea8",
+        "data/cost_ledger.json": "87869bbc42217828b004cfc5432ad1a4e0753d3b46db5914955eae0554100bda",
+        "results/summary.json": "bb7f42619ae661e8e67746aed4b093b88d79ab864aa1ca0e3a9f9d33fc9ccdef",
+        "results/missingness_ranges.json": "ad18c19088f439110edcb43ad7cb0fe50f7bc23d1181515602c31e2cc30f90e3"
+      },
+      "shared_input_sha256": {
+        "data/sample.csv": "908bf831564c752446cdbf31cfe464c641641c26f4c012c2443d548c56d276ec",
+        "data/frozen_inputs.jsonl": "2db2f1902dd2211320b111541dbe7b7754a13b08b60a7db6a967281b55f7ed33",
+        "prompts/annotation.txt": "ec002fa85c201ea5492a59be7eb647d1c277a2ee62f0b3558c9db1194393f047",
+        "prompts/summarization.txt": "7fa466c8837d34fbcb95e888d74f460caa9975d0a6ffd7d6cc65d173cd110767",
+        "prompts/workflow_stages.json": "f7f8244e27d1f53fb0480814e770de6e4db244bc3d53a39bfed884675d62181d"
+      }
+    },
+    {
+      "label": "GPT-5",
+      "directory": "domain_input_ablation_gpt5",
+      "model": "gpt-5-2025-08-07",
+      "config": {
+        "protocol_version": "2026-09-19-v5-gpt5-followup",
+        "run_id": "domain-input-20260919-v5-gpt5-followup",
+        "seed": 20260919,
+        "model": "gpt-5-2025-08-07",
+        "readme_max_characters": 3000,
+        "annotation_max_characters": 2000,
+        "practical_gap_margin_pp": {
+          "literature_review": 5.0,
+          "methodology_encoding": 5.0
+        },
+        "archived_cross_configuration_margin_pp": 5.0,
+        "alpha": 0.05,
+        "workers": 20,
+        "max_attempts": 3,
+        "model_scope": "GPT-5 domain-input sensitivity follow-up on the same600sample,prompt strings,and frozen repository evidence. Both stages use reasoning_effort=minimal,omit temperature,and allow1024total completion tokens(reasoning plus visible output). These APIsettings differ from the preceding GPT-4o/GPT-4o-mini200/300visible-token and0.3/0temperature requests,so cross-run differences cannot be attributed purely to model identity. The archived release used GPT-4o-mini; archived-versus-fresh comparison is a secondary cross-configuration diagnostic,not an exact historical replay.",
+        "sample_sizes": {
+          "research|1": 110,
+          "research|0": 190,
+          "data_science|1": 59,
+          "data_science|0": 241
+        },
+        "pilot_per_stratum": 10,
+        "additional_pilot_repetitions": 1,
+        "excluded_repository": "AppantasyArthurLai/taiwan-hungry-soul",
+        "followup_design_timing": "Third-model follow-up selected after the completedGPT-4o experiment and alongside the approvedGPT-4o-mini follow-up. Exact600IDs,40repeatIDs,pairedmessages,promptstrings,weights,seed,estimands,strictparser,retries,and\u00b15pp margins remain unchanged. GPT-5APIcompatibility changes are disclosed before anyGPT-5 generation; this is a disclosed follow-up,not an outcome-blind model-comparison design.",
+        "api_profile": "gpt5_chat_reasoning",
+        "reasoning_effort": "minimal",
+        "summary_max_completion_tokens": 1024,
+        "annotation_max_completion_tokens": 1024,
+        "archived_request_settings": {
+          "summary_temperature": 0.3,
+          "summary_max_tokens": 200,
+          "annotation_temperature": 0.0,
+          "annotation_max_tokens": 300
+        }
+      },
+      "complete_primary_pairs": 597,
+      "complete_repeat_pairs": 40,
+      "primary_n": 600,
+      "raw_attempts": 2572,
+      "estimator_ranges": {
+        "literature_review": {
+          "archived": {
+            "research": [
+              0.33232628398791486,
+              0.33232628398791486
+            ],
+            "data_science": [
+              0.031584582441113514,
+              0.031584582441113514
+            ],
+            "gap": [
+              0.30074170154680135,
+              0.30074170154680135
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 0
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "with_domain": {
+            "research": [
+              0.6154237557640321,
+              0.6154237557640321
+            ],
+            "data_science": [
+              0.18428745324175694,
+              0.1923240957111253
+            ],
+            "gap": [
+              0.4230996600529068,
+              0.43113630252227514
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 2
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "without_domain": {
+            "research": [
+              0.6430434091270465,
+              0.6430434091270465
+            ],
+            "data_science": [
+              0.18375212133597535,
+              0.18428745324175694
+            ],
+            "gap": [
+              0.45875595588528956,
+              0.45929128779107115
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 1
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "domain_removal": {
+            "research": [
+              0.027619653363014793,
+              0.027619653363014793
+            ],
+            "data_science": [
+              -0.008571974375149938,
+              0.0
+            ],
+            "gap": [
+              0.027619653363014793,
+              0.03619162773816473
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 3
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "archived_cross_configuration": {
+            "research": [
+              0.283097471776117,
+              0.283097471776117
+            ],
+            "data_science": [
+              0.1527028708006434,
+              0.16073951327001176
+            ],
+            "gap": [
+              0.12235795850610523,
+              0.1303946009754736
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 2
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          }
+        },
+        "methodology_encoding": {
+          "archived": {
+            "research": [
+              0.825091429480043,
+              0.825091429480043
+            ],
+            "data_science": [
+              0.6335331017263878,
+              0.6335331017263878
+            ],
+            "gap": [
+              0.19155832775365522,
+              0.19155832775365522
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 0
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "with_domain": {
+            "research": [
+              0.735570042932103,
+              0.735570042932103
+            ],
+            "data_science": [
+              0.42432272739388793,
+              0.43235936986325624
+            ],
+            "gap": [
+              0.3032106730688468,
+              0.3112473155382151
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 2
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "without_domain": {
+            "research": [
+              0.7501828589600883,
+              0.7501828589600883
+            ],
+            "data_science": [
+              0.45753996108292433,
+              0.4580752929887059
+            ],
+            "gap": [
+              0.2921075659713824,
+              0.29264289787716397
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 1
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "domain_removal": {
+            "research": [
+              0.01461281602798537,
+              0.01461281602798537
+            ],
+            "data_science": [
+              0.025180591219668223,
+              0.033752565594818165
+            ],
+            "gap": [
+              -0.019139749566832794,
+              -0.010567775191682853
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 3
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          },
+          "archived_cross_configuration": {
+            "research": [
+              -0.08952138654794083,
+              -0.08952138654794083
+            ],
+            "data_science": [
+              -0.20921037433250125,
+              -0.2011737318631329
+            ],
+            "gap": [
+              0.11165234531519207,
+              0.11968898778456043
+            ],
+            "unknown_rows_by_domain": {
+              "research": 0,
+              "data_science": 2
+            },
+            "interpretation": "Identification range of the full-design weighted sample estimator; not a confidence interval."
+          }
+        }
+      },
+      "bounds": {
+        "literature_review": {
+          "delta": [
+            -0.0664183546064421,
+            0.12079901925901007
+          ],
+          "gap_without_domain": [
+            0.38359846548969134,
+            0.5260016043784005
+          ],
+          "source": "summary.json / incomplete_pair_bounds (frozen bound_missing)",
+          "practical_margin_pp": 5.0,
+          "decision": "inconclusive_for_margin"
+        },
+        "methodology_encoding": {
+          "delta": [
+            -0.12205567451820128,
+            0.08695666237538573
+          ],
+          "gap_without_domain": [
+            0.20649255710746095,
+            0.37248749814008547
+          ],
+          "source": "summary.json / incomplete_pair_bounds (frozen bound_missing)",
+          "practical_margin_pp": 5.0,
+          "decision": "inconclusive_for_margin"
+        }
+      },
+      "pooled_methodology_estimator_ranges": {
+        "archived": [
+          0.662367029187261,
+          0.662367029187261
+        ],
+        "with_domain": [
+          0.4711725961720367,
+          0.47799953938839873
+        ],
+        "without_domain": [
+          0.5015894377529294,
+          0.5020441899130023
+        ]
+      },
+      "repeat_diagnostics": [
+        {
+          "condition": "with_domain",
+          "outcome": "literature_review",
+          "paired_repositories": "40",
+          "unchanged": "35",
+          "gain": "3",
+          "loss": "2"
+        },
+        {
+          "condition": "with_domain",
+          "outcome": "methodology_encoding",
+          "paired_repositories": "40",
+          "unchanged": "32",
+          "gain": "6",
+          "loss": "2"
+        },
+        {
+          "condition": "without_domain",
+          "outcome": "literature_review",
+          "paired_repositories": "40",
+          "unchanged": "36",
+          "gain": "4",
+          "loss": "0"
+        },
+        {
+          "condition": "without_domain",
+          "outcome": "methodology_encoding",
+          "paired_repositories": "40",
+          "unchanged": "35",
+          "gain": "2",
+          "loss": "3"
+        }
+      ],
+      "failed_attempt_reasons": {
+        "off_menu_workflow_stage": 15
+      },
+      "source_sha256": {
+        "config.json": "4eaa038f7d819ac1995dc075dc6f5be1d2df00961f488c49e0fdd52bd9b09742",
+        "data/manifest.json": "f8e00c726547f69ec997877fd99c20a357f78579716ea9eff33b4b60cb16f5d8",
+        "data/cost_ledger.json": "4cae2ad11c5ac4eff0b7e09621e761fa3cc28f5502474ee93424fc2244bd2cde",
+        "results/summary.json": "4b751b8827fa8ced55592a75f3bcb3968f30d21f350831d1fc1d598cbb162066",
+        "results/missingness_ranges.json": "befcaf2a3820c7923aef59f68f51d18ba69cb9f2ec8f10d6b9c5e54efc7ab7e1"
+      },
+      "shared_input_sha256": {
+        "data/sample.csv": "908bf831564c752446cdbf31cfe464c641641c26f4c012c2443d548c56d276ec",
+        "data/frozen_inputs.jsonl": "2db2f1902dd2211320b111541dbe7b7754a13b08b60a7db6a967281b55f7ed33",
+        "prompts/annotation.txt": "ec002fa85c201ea5492a59be7eb647d1c277a2ee62f0b3558c9db1194393f047",
+        "prompts/summarization.txt": "7fa466c8837d34fbcb95e888d74f460caa9975d0a6ffd7d6cc65d173cd110767",
+        "prompts/workflow_stages.json": "f7f8244e27d1f53fb0480814e770de6e4db244bc3d53a39bfed884675d62181d"
+      }
+    }
+  ],
+  "interpretation": "Separate within-model domain-field interventions; no pooled model test or model superiority test. Follow-ups selected after GPT-4o results. Confidence bounds are per experiment/outcome, not jointly adjusted across model selection. GPT-5 uses different supported API settings, so cross-model differences are configuration differences."
+}

@@ -1,0 +1,92 @@
+{
+  "frozen_at": "2026-09-20T03:14:59.346686+00:00",
+  "config": {
+    "protocol_version": "2026-09-19-v4-mini-followup",
+    "run_id": "domain-input-20260919-v4-mini-followup",
+    "seed": 20260919,
+    "model": "gpt-4o-mini-2024-07-18",
+    "summary_temperature": 0.3,
+    "summary_max_tokens": 200,
+    "annotation_temperature": 0.0,
+    "annotation_max_tokens": 300,
+    "readme_max_characters": 3000,
+    "annotation_max_characters": 2000,
+    "practical_gap_margin_pp": {
+      "literature_review": 5.0,
+      "methodology_encoding": 5.0
+    },
+    "archived_cross_configuration_margin_pp": 5.0,
+    "alpha": 0.05,
+    "workers": 20,
+    "max_attempts": 3,
+    "model_scope": "GPT-4o-mini domain-input sensitivity follow-up on the same frozen sample and prompts after the completed GPT-4o experiment. This is a same-family reconstruction of the archived GPT-4o-mini pipeline, but original request payloads and resolved snapshot are unavailable. Archived-versus-fresh differences are a reconstruction diagnostic, not proof of exact historical reproduction.",
+    "sample_sizes": {
+      "research|1": 110,
+      "research|0": 190,
+      "data_science|1": 59,
+      "data_science|0": 241
+    },
+    "pilot_per_stratum": 10,
+    "additional_pilot_repetitions": 1,
+    "excluded_repository": "AppantasyArthurLai/taiwan-hungry-soul",
+    "followup_design_timing": "Selected after observing the completed GPT-4o experiment; retains the same600sample,40repeatIDs,paired inputs,prompt strings,sampling seed,estimands,strict parser,retries,and±5pp primary margins. This is a disclosed follow-up, not a newly outcome-blind design."
+  },
+  "config_sha256": "2060e63ac48787363771481fcf433c79a3f6b8a32d12a91e7ca9f79a111b3732",
+  "source_sha256": {
+    "2.auto-claw/data/repos_llm.csv": "0dfdb23a716ecf5c2c08ccc5d223213dad568e461b747ed1ad18bbbf4171519e",
+    "2.auto-claw/data/readme_checkpoint.json": "3d329fae9487e6dd631bb5a7a46569dee8900ba701445e90a97fd510e7af4f05",
+    "2.auto-claw/data/research_summaries.csv": "3f9a8de8407abfaaa294679241a293d93361e95b42b098f6fe4af6d3ef68e8c6",
+    "4.further-RQ/data/research_annotated_v2.csv": "42feeff49716332daf1c24d16623d91e746bfa3ff43c20cc05db38eac218931e",
+    "2.auto-claw/01c-research-embedding.ipynb": "906a5371e5f2ff0a8f433f22ff6f40dec11fe454f747b7b086eb89808c0bf5e0",
+    "4.further-RQ/01-methodology-autonomy-annotation.ipynb": "43f0026570639952067d12874221859deac08b8ec62b4a1b0f803c0a3cc2d40e",
+    "2.auto-claw/data/research_summary_checkpoint.json": "a5c7040e2b7f438eced71d57261aa48baab18e5f8b5711f168b4115f2401da22",
+    "2.auto-claw/data/all_summary_checkpoint.json": "3e89bab75f50351de833c5a35b3e59e64c0cfc0616682d93f48786098fce7094",
+    "4.further-RQ/data/annotation_checkpoint.json": "0e6de4b28f1000c8a40a986bbccc277b17233d0f7aa46c95d2dd06fd12c54487"
+  },
+  "implementation_sha256": {
+    "01_prepare_inputs.py": "a752e80903d28bc2377945a42f152eff63952efa49be657ca925643cd957b001",
+    "02_run_ablation.py": "1a8c8f7c9635f8322d93d5f8d18a9db2b487c70c96c9eb0492354af51d52658d",
+    "03_analyze.py": "5830e95d8a34200955ad0320cfd573cc94422e83c6eeed943b7849198b9f780b",
+    "04_domain_discipline_table.py": "64593e77e246fbaf7cac6036359a35fc656da8ce072adff47d81cf696bcea933",
+    "common.py": "2c857acc61a728d355a57b2415516e62b9f80979e66174391cba5e15ed43103a",
+    "statistics.py": "c9f97a662caa3c359bd45f61a1775ce1ed0c647124763d3eca7b5f9307e5aa89"
+  },
+  "prompt_sha256": {
+    "summary": "7fa466c8837d34fbcb95e888d74f460caa9975d0a6ffd7d6cc65d173cd110767",
+    "annotation": "ec002fa85c201ea5492a59be7eb647d1c277a2ee62f0b3558c9db1194393f047"
+  },
+  "sample_sha256": "908bf831564c752446cdbf31cfe464c641641c26f4c012c2443d548c56d276ec",
+  "frozen_inputs_sha256": "2db2f1902dd2211320b111541dbe7b7754a13b08b60a7db6a967281b55f7ed33",
+  "strata": {
+    "research|1": {
+      "N": 110,
+      "n": 110
+    },
+    "research|0": {
+      "N": 221,
+      "n": 190
+    },
+    "data_science|1": {
+      "N": 59,
+      "n": 59
+    },
+    "data_science|0": {
+      "N": 1809,
+      "n": 241
+    }
+  },
+  "planned_successful_calls": 2560,
+  "planned_primary_repositories": 600,
+  "planned_repeated_repositories": 40,
+  "margins_rationale": "5 percentage points is an author-selected tolerance, about one sixth of the archived 30.1-point literature gap and three tenths of the 16.4-point methodology gap; not a universal equivalence standard.",
+  "historical_provenance": "Original research-only request payloads and resolved model snapshot unavailable. Current notebook reuses their 2200 summaries. Both this fresh reconstruction and the archived pipeline use the GPT-4o-mini family, but exact historical request and snapshot identity cannot be established.",
+  "model_scope": "GPT-4o-mini domain-input sensitivity follow-up on the same frozen sample and prompts after the completed GPT-4o experiment. This is a same-family reconstruction of the archived GPT-4o-mini pipeline, but original request payloads and resolved snapshot are unavailable. Archived-versus-fresh differences are a reconstruction diagnostic, not proof of exact historical reproduction.",
+  "excluded_repository": "AppantasyArthurLai/taiwan-hungry-soul",
+  "exclusion_reason": "Archived summary is an API error string; released corpus remains unchanged.",
+  "all_target_readme_sentinels": 14,
+  "selected_readme_sentinels": 4,
+  "pre_results_analysis": "Stratified SRSWOR paired variance with finite corrections. Supplement normal intervals with simultaneous exact hypergeometric directional-transition bounds; conservative interval governs practical-margin classifications.",
+  "pre_results_amendment": "Selected after observing the completed GPT-4o experiment; retains the same600sample,40repeatIDs,paired inputs,prompt strings,sampling seed,estimands,strict parser,retries,and±5pp primary margins. This is a disclosed follow-up, not a newly outcome-blind design.",
+  "completed_gpt4o_reference": "../domain_input_ablation/",
+  "fresh_followup_no_generation_yet": true
+}
